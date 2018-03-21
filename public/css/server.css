@@ -1,0 +1,119 @@
+#server {
+  width: 100%;
+}
+#server .provider {
+  margin-top: 70px;
+  width: 100%;
+  height: 7785px;
+  background-color: #fbf8f8;
+}
+#server .provider .provider_title {
+  margin: 0 auto;
+  display: block;
+  width: 90%;
+  height: 85px;
+  line-height: 85px;
+  font-size: 20px;
+  font-weight: bold;
+}
+#server .provider .provider_content {
+  margin: 0 auto;
+  width: 90%;
+  height: 7700px;
+}
+#server .provider .provider_content .provider_left {
+  float: left;
+  width: 75%;
+  height: 7700px;
+}
+#server .provider .provider_content .provider_left > ul {
+  width: 100%;
+  height: 7500px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#server .provider .provider_content .provider_left > ul > li {
+  box-sizing: border-box;
+  width: 24%;
+  height: 290px;
+  border: 1px solid #b2c5c6;
+  padding: 10px;
+  background: #fff;
+}
+#server .provider .provider_content .provider_left > ul > li img {
+  width: 198px;
+  height: 198px;
+}
+#server .provider .provider_content .provider_left > ul > li .provider_left_img {
+  width: 100%;
+  height: 46px;
+  line-height: 46px;
+}
+#server .provider .provider_content .provider_left > ul > li .provider_left_img > img {
+  width: 18px;
+  height: 18px;
+}
+#server .provider .provider_content .provider_left > ul > li .provider_left_img span {
+  font-weight: bold;
+  color: #3D3838;
+}
+#server .provider .provider_content .provider_left > ul > li .provider_left_text {
+  width: 100%;
+  height: 33px;
+  font-size: 12px;
+}
+#server .provider .provider_content .provider_left > ul > li .provider_left_text span:nth-child(1) {
+  float: left;
+}
+#server .provider .provider_content .provider_left > ul > li .provider_left_text span:nth-child(2) {
+  float: right;
+}
+#server .provider .provider_content .provider_left .provider_left_more {
+  position: relative;
+  width: 100%;
+  height: 200px;
+}
+#server .provider .provider_content .provider_left .provider_left_more > div {
+  width: 198px;
+  height: 48px;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid #b2c5c6;
+  color: #797979;
+}
+#server .provider .provider_content .provider_right {
+  float: right;
+  width: 25%;
+  height: 100%;
+}
+#server .provider .provider_content .provider_right .provider_right_settled {
+  margin: 5px 10px;
+}
+#server .provider .provider_content .provider_right .provider_right_settled > a > img {
+  width: 228px;
+  height: 290px ;
+}
+#server .provider .provider_content .provider_right .provider_right_code {
+  position: relative;
+  margin: 10px 10px;
+  width: 231px;
+  height: 280px;
+  background: url("../images/Provider/tuijianfuwushang_06.jpg");
+}
+#server .provider .provider_content .provider_right .provider_right_code > img {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}

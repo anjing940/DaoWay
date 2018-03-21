@@ -1,0 +1,122 @@
+#server{
+  width: 100%;
+  .provider{
+    margin-top: 70px;
+    width: 100%;
+    height: 7785px;
+    background-color: #fbf8f8;
+    .provider_title{
+      margin: 0 auto;
+      display: block;
+      width: 90%;
+      height: 85px;
+      line-height: 85px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .provider_content{
+      margin: 0 auto;
+      width: 90%;
+      height: 7700px;
+      .provider_left{
+        float: left;
+        width: 75%;
+        height: 7700px;
+        >ul{
+          width: 100%;
+          height: 7500px;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          flex-wrap: wrap;
+          >li{
+            box-sizing: border-box;
+            width: 24%;
+            height: 290px;
+            border: 1px solid #b2c5c6;
+            padding: 10px;
+            background: #fff;
+            img{
+              width:198px;
+              height: 198px;
+            }
+            .provider_left_img{
+              width: 100%;
+              height: 46px;
+              line-height:46px;
+              >img{
+                width:18px;
+                height: 18px;
+              }
+              span{
+                font-weight: bold;
+                color: #3D3838;
+              }
+            }
+            .provider_left_text{
+              width: 100%;
+              height:33px;
+              font-size: 12px;
+              span:nth-child(1){
+                float: left;
+              }
+              span:nth-child(2){
+                float: right;
+              }
+            }
+
+          }
+        }
+        .provider_left_more{
+          position: relative;
+          width: 100%;
+          height: 200px;
+          >div{
+            width: 198px;
+            height: 48px;
+            background: #fff;
+            position: absolute;
+            top:0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            line-height: 50px;
+            text-align: center;
+            border-radius: 5px;
+            border: 1px solid #b2c5c6;
+            color: #797979;
+          }
+        }
+      }
+      .provider_right{
+        float: right;
+        width: 25%;
+        height: 100%;
+        .provider_right_settled{
+          margin:5px 10px;
+          >a{
+            >img{
+              width: 228px;
+              height:290px ;
+            }
+          }
+        }
+        .provider_right_code{
+          position: relative;
+          margin:10px 10px;
+          width: 231px;
+          height: 280px;
+          background: url("../images/Provider/tuijianfuwushang_06.jpg");
+          >img{
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            top:40px;
+            left: 40px;
+          }
+        }
+      }
+    }
+  }
+}
