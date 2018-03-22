@@ -36,41 +36,73 @@
       </div>
     </header>
     <!--云家政头部-->
-    <section id="service-item">
-      <div class="htit">
-        <div class="htit-center">
-          <div class="htit-right">
-            <b>云家政</b>
-            <i>营业时间：<em>09:00-18:00</em></i>
-            <i>最近可预约时间：<em>03月16日 09:00</em></i>
+    <div class="keeping_title">
+      <div class="keeping_title_content">
+        <div class="keeping_title_cont_header">
+          <div class="keeping_title_cont_header_left">
+            <span>金牌护士 </span>
+            <span>营业时间：</span>
+            <span>08:00-21:00</span>
+            <span>最近可预约时间：</span>
+            <span>03月22日 20:00</span>
           </div>
-          <div class="htit-left">
-        <span>
-          <i>86%</i>好评率
-        </span>
-            <span>
-          <i>91%</i>接单率
-          <em>|</em>
-        </span>
-            <span>
-          <i>45186</i>成功接单
-          <em>|</em>
-        </span>
+          <div class="keeping_title_cont_header_right">
+            <ul>
+              <li>
+                <i>147</i>
+                成功接单
+                <em>|</em>
+              </li>
+              <li>
+                <i>147</i>
+                成功接单
+                <em>|</em>
+              </li>
+              <li>
+                <i>147</i>
+                成功接单
+                <em>|</em>
+              </li>
+            </ul>
           </div>
         </div>
-      </div>
-      <div class="navtit">
-        <ul class="items">
-          <li>服务项目</li>
 
-          <li>商家简介</li>
-
-          <li>用户评论</li>
-        </ul>
       </div>
-      <div class="nav">
+    </div>
+    <!--云家政导航-->
+    <div class="navtit">
+      <ul>
+        <li class="on"><a href="javascript:;">服务项目</a></li>
+        <li><a href="javascript:;">商家简介</a></li>
+        <li><a href="javascript:;">用户评论</a></li>
+      </ul>
+    </div>
+    <!--云家政主体-->
+    <div class="housemain">
+      <div class="housemain_left">
+        <div class="housemain_left_tit">
+          <div class="housemain_left_tit_top"></div>
+        </div>
+      </div>
+      <div class="housemain_right"></div>
+    </div>
   </div>
-    </section>
-  </div>
+  <script type="text/javascript" src="./js/jquery-1.10.1.js"></script>
+  <script type="text/javascript" src="./js/template-web.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      //头部动画
+      var $Top = $('.header').height();
+      $(window).scroll(function () {
+        $scrollTop = $(window).scrollTop()
+        if($scrollTop>$Top){
+          $('.header').addClass('showheader')
+        }else{
+          $('.header').removeClass('showheader')
+        }
+      })
+      //art-template
+    })
+  </script>
 </body>
 </html>

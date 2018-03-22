@@ -58,3 +58,16 @@
 .header .header_content span:nth-child(2) .header_nav > a.on {
   color: #ce0712;
 }
+.header.showheader {
+  position: fixed;
+  animation: show 0.5s;
+  box-shadow: 0.1px 0.1px 10px #a7a7a7;
+}
+@keyframes show {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}

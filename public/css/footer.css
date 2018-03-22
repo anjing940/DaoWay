@@ -59,11 +59,11 @@
   height: 100px;
   flex: 9;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 }
 .footer .city .city_right > li {
+  text-align: center;
   font-size: 15px;
   width: 9%;
   color: #7e8c8d;
