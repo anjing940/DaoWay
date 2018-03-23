@@ -282,12 +282,22 @@
   height: 35px;
   margin: auto;
 }
+#housekeeping .housemain .housemain_left .house_comment_bottom .house_comment_bottom_fan > span {
+  border: 1px solid #e5e5e5;
+  font-size: 14px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 10px;
+}
 #housekeeping .housemain .housemain_left .house_comment_bottom .house_comment_bottom_fan > a {
   border: 1px solid #e5e5e5;
   font-size: 14px;
   text-align: center;
   display: inline-block;
   margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
 }
 #housekeeping .housemain .housemain_left .house_comment_bottom .house_comment_bottom_fan .span_ye {
   width: 85px;
@@ -302,6 +312,9 @@
 #housekeeping .housemain .housemain_left .house_comment_bottom .house_comment_bottom_fan .on {
   background: #fb474f;
   color: #fff;
+}
+#housekeeping .housemain .housemain_left .house_comment_bottom .house_comment_bottom_fan .nopage {
+  color: #929292;
 }
 #housekeeping .housemain .housemain_right {
   width: 20%;

@@ -140,7 +140,7 @@
         <!--翻页底部-->
         <div class="house_comment_bottom">
           <div class="house_comment_bottom_fan">
-            <a href="javascript:;" class="span_ye up">上一页</a>
+            <span class="span_ye up">上一页</span>
             <a href="javascript:;" class="span_num on">1</a>
             <a href="javascript:;" class="span_num">2</a>
             <a href="javascript:;" class="span_num">3</a>
@@ -151,7 +151,7 @@
             <a href="javascript:;" class="span_num">8</a>
             <a href="javascript:;" class="span_num">9</a>
             <a href="javascript:;" class="span_num">10</a>
-            <a href="javascript:;" class="span_ye down">下一页</a>
+            <span class="span_ye down">下一页</span>
           </div>
         </div>
       </div>
@@ -236,9 +236,11 @@
   </script>
   <script type="text/javascript">
     $(function () {
-      var page = 1
+      var page = 1;//定义当前的page页数
       //头部动画
+      //先获取header的高度
       var $Top = $('.header').height();
+      //监视视口滚动的高度
       $(window).scroll(function () {
         $scrollTop = $(window).scrollTop()
         if($scrollTop>$Top){
@@ -247,12 +249,18 @@
           $('.header').removeClass('showheader')
         }
       })
-      //art-template
-      $.get('/commetlist?page='+page,function (data) {
+      //获取小星星
+      //发送异步请求时才会获取到数据渲染页面
+      $.get('/commetlist',function (data) {
         function  getStar(data){
+          //根据返回的对象去去遍历得到所有的数据
           return  data.list.map(function (value,index) {
+            console.log(data)
+            //得到每一项的count值
             let count =value.star
+            //为stars创建一个空数组
             let stars = []
+            //遍历5次为start添加路径
             for (var i = 0; i < 5; i++) {
               if(count>0){
                 count--;
@@ -261,66 +269,77 @@
                 stars.push("./images/service/gray_star.png")
               }
             }
+            //为data添加一个stars数组
             value.stars = stars
             return value
           })
         }
         let newData =getStar(data)
-        console.log(newData)
-        //找到模板渲染
-        $('.house_commentUl').append(template('temp3',{data:newData}))
+        //找到模板将返回新的值渲染
+        $('.house_commentUl').append(template('temp3',{data:newData}));
 
+        //翻页
         const $aList = $('.house_comment_bottom_fan>a');
+        console.log($aList)
         $aList.click(function () {
+          //获取当前点击的index值
           let index = $(this).index();
           $aList.removeClass('on');
           $(this).addClass('on');
-          page = index+1;
+          page = index+1;//当前页数与index值得关系
           $.get('/commetlist?page='+page,function (data) {
+            let newData =getStar(data)
             $('.house_commentUl').html(template('temp3',{data:newData}))
           });
         });
-
+        //上一页
         $('.up').click(function () {
           page--;
+          acss(page);
           var index = page -1;
           $aList.removeClass('on');
-          $(this).addClass('on');
-          page = index+1
+          $aList.each(function () {
+            $aList[index].className='on'
+          })
           $.get('/commetlist?page='+page,function (data) {
+            let newData =getStar(data)
             $('.house_commentUl').html(template('temp3',{data:newData}))
           });
         });
+        //下一页
         $('.down').click(function () {
           page++;
-          acss(page)
-          var index = page -1
+          acss(page);
+          var index = page -1;
           $aList.removeClass('on');
           $aList.each(function () {
             $aList[index].className = 'on'
-          })
+          });
           $.get('/commetlist?page='+page,function (data) {
+            let newData =getStar(data)
             $('.house_commentUl').html(template('temp3',{data:newData}))
           });
-        })
+        });
 
-
-
-
+        //边界
+        function acss() {
+          if(page<=1){
+            $('.up').addClass('nopage');
+            page = 1
+          }
+          if(page>=9){
+            $('.down').addClass('nopage');
+            page=9
+          }
+          else {$('.down').removeClass('nopage')}
+        }
       });
-
-
-
-
-
 
 
       // 注册过滤器 时间戳转换为时间
       template.defaults.imports.dateFormat = function(date, format){
         return moment(date).format(format);
       }
-
-
     })
   </script>
 </body>
